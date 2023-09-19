@@ -1,6 +1,7 @@
 package com.example.websocketchat.repository;
 
 import com.example.websocketchat.dto.ChatRoom;
+import org.springframework.data.redis.listener.ChannelTopic;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
@@ -31,5 +32,14 @@ public class ChatRoomRepository {
         ChatRoom chatRoom = ChatRoom.create(name);
         chatRoomMap.put(chatRoom.getRoomId(), chatRoom);
         return chatRoom;
+    }
+
+    public void enterChatRoom(String roomId) {
+        // todo
+    }
+
+    public ChannelTopic getTopic(String roomId) {
+        // todo
+        return null;
     }
 }
