@@ -23,7 +23,7 @@ public class ChatRoomRepository {
     // 구독 처리
     private final RedisSubscriber redisSubscriber;
     // Redis
-    private static final String CHAT_ROOMS = "CHATROOM";
+    private static final String CHAT_ROOMS = "CHAT_ROOM";
     private final RedisTemplate<String, Object> redisTemplate;
     private HashOperations<String, String, ChatRoom> opsHashChatRoom;
     // redis topic 정보
