@@ -3,6 +3,7 @@ package com.example.websocketchat.dto;
 
 import lombok.*;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 
@@ -10,7 +11,8 @@ import java.util.UUID;
 @NoArgsConstructor
 @Setter
 @Getter
-public class ChatRoom {
+public class ChatRoom implements Serializable {
+    private static final long serialVersionUID = 999999999999999L;
     private String roomId;
     private String name;
 
