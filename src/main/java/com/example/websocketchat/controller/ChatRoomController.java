@@ -22,13 +22,17 @@ public class ChatRoomController {
 
     @GetMapping("/room")
     public String rooms(Model model) {
-        return "room"; // chat list view
+        return "room.html"; // chat list view
     }
 
     @GetMapping("/rooms")
     @ResponseBody
     public List<ChatRoom> room() { // find All rooms
-        return chatRoomRepository.findAllRoom();
+        List<ChatRoom> chatRooms = chatRoomRepository.findAllRoom();
+        chatRooms.forEach(room -> room.setUserCount(
+                chatRoomRepository.getUserCount(room.getRoomId())
+        ));
+        return chatRooms;
     }
 
     @PostMapping("/room")
