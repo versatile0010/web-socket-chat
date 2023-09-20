@@ -26,6 +26,9 @@ spring:
     properties:
       hibernate:
         format_sql: true
+  jwt:
+    secret: ${LOCAL_JWT_SECRET_KEY}
+    validate: ${LOCAL_JWT_VALIDATE_MS}
 
 logging:
   level:
